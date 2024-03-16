@@ -68,6 +68,7 @@ describe("AddBookFormGraphql", () => {
 
   it("allows adding a book and displays it in the list", () => {
     cy.visit("/book-list-graphql")
+    cy.wait("@getBooks")
     // Initially, the book list should be empty
     cy.get("body").should("not.contain", "Test Book Title")
     cy.get("body").should("not.contain", "Test Author")
@@ -87,6 +88,8 @@ describe("AddBookFormGraphql", () => {
   })
 
   it("allows deleting a book and removes it from the list", () => {
+    cy.visit("/book-list-graphql")
+    cy.wait("@getBooks")
     // Ensure the book is added first
     cy.get('input[placeholder="Title"]').type("Test Book Title")
     cy.get('input[placeholder="Author"]').type("Test Author")
@@ -95,10 +98,11 @@ describe("AddBookFormGraphql", () => {
     // Wait for the book to be added
     cy.wait("@createBook")
     cy.wait("@getBooks")
+    cy.screenshot("book-list-graphql")
 
     // Now, delete the book
     // Adjust the selector to target the delete button for the specific book
-    cy.get('[data-cy="delete-book-button"]').click()
+    cy.get('[data-cy="delete-book-button-1"]').click()
 
     // Wait for the DeleteBook mutation and the subsequent GetBooks query
     cy.wait("@deleteBook")
