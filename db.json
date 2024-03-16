@@ -1,0 +1,19 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Pan Tadeusz",
+      "author": "Adam Mickiewicz"
+    },
+    {
+      "id": "3",
+      "title": "xxx",
+      "author": "bbbbbbbbb"
+    },
+    {
+      "id": 4,
+      "title": "new",
+      "author": "auth"
+    }
+  ]
+}
