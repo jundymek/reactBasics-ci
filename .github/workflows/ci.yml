@@ -24,6 +24,14 @@ jobs:
       - name: Run Jest Tests and Collect Coverage
         run: npm run test:coverage
 
+      - name: Start Server
+        run: npm run dev &
+        env:
+          CI: true
+
+      - name: Wait for Server to be ready
+        run: npx wait-on http://localhost:5173
+
       - name: Run Cypress Tests and Collect Coverage
         run: npm run cypress:run
 
