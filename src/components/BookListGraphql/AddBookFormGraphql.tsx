@@ -1,4 +1,3 @@
-import React from "react"
 import { useForm } from "react-hook-form"
 import { gql, useApolloClient, useMutation } from "@apollo/client"
 import { GET_BOOKS_QUERY } from "./BookListGraphql"

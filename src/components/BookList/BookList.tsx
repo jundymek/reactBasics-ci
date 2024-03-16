@@ -1,4 +1,3 @@
-import React from "react"
 import { useDeleteBook } from "../../hooks/reactQuery/useDeleteBook"
 import { useGetBooks } from "../../hooks/reactQuery/useGetBooks"
 import { BookType } from "../../types/bookType"

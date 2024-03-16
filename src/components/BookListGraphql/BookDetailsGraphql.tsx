@@ -1,5 +1,3 @@
-import React from "react"
-
 import { useQuery, gql } from "@apollo/client"
 import { BOOK_FRAGMENT } from "../../graphql/graphqlDefinitions"
 

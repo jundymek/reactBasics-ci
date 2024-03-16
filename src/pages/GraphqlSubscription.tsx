@@ -1,6 +1,5 @@
 import { gql, useSubscription } from "@apollo/client"
 import dayjs from "dayjs"
-import React from "react"
 
 const SUBSCRIBE_TIME_UPDATE = gql`
   subscription OnTimeUpdated {

@@ -1,4 +1,3 @@
-import React from "react"
 import { useGetSingleBook } from "../hooks/reactQuery/useGetSingleBook"
 import { BookDetailsAnotherComponent } from "./BookDetailsAnotherComponent"
 

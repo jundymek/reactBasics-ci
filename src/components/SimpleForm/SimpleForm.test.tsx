@@ -1,4 +1,3 @@
-import React from "react"
 import { render, fireEvent } from "@testing-library/react"
 import { SimpleForm } from "./SimpleForm"
 import { screen } from "@testing-library/dom"

@@ -1,4 +1,3 @@
-import React from "react"
 import { gql, useQuery, useMutation } from "@apollo/client"
 import { BookType } from "../../types/bookType"
 import { useNavigate } from "react-router-dom"
