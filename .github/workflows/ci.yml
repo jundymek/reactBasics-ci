@@ -31,7 +31,7 @@ jobs:
         run: npm run preview &
 
       - name: Wait for Server
-        run: npx wait-on http://localhost:4173
+        run: npx wait-on http://localhost:5173
 
       - name: Run Cypress Tests and Collect Coverage
         run: npm run cypress:run

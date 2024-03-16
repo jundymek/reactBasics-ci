@@ -24,7 +24,8 @@
   "include": [
     "src",
     "server.cjs",
-    "server.js"
+    "server.js",
+    "jest.setup.js"
   ],
   "references": [
     {
