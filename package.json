@@ -83,6 +83,10 @@
       "^.+\\.(css|scss|sass|less)$": "jest-preview/transforms/css",
       "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "jest-preview/transforms/file"
     },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cypress/"
+    ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
