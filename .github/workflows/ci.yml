@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -18,8 +19,15 @@ jobs:
         run: npm install
 
       - name: Run Jest Tests and Collect Coverage
-        run: npm run test
+        run: npm run test:coverage
 
       - name: Run Cypress Tests and Collect Coverage
         run: npm run cypress:run
-        # Ustaw ścieżkę do Twojego skryptu uruchamiającego Cypress z opcją zbierania code coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage/
+          flags: cypress
+          name: codecov-umbrella
