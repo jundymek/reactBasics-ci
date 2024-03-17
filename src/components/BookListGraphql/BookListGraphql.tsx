@@ -63,34 +63,36 @@ export const BookListGraphql = () => {
             <th className="px-4 py-2">Details</th>
           </tr>
         </thead>
-        <tbody>
-          {data?.books?.map((book: BookType) => (
-            <tr key={book.id}>
-              <td className="border px-4 py-2">{book.id}</td>
-              <td data-cy="book-title" className="border px-4 py-2">
-                {book.title}
-              </td>
-              <td className="border px-4 py-2">{book.author}</td>
-              <td className="border px-4 py-2">
-                <button
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                  onClick={() => handleDelete(book.id)}
-                  data-cy={`delete-book-button-${book.id}`}
-                >
-                  Delete
-                </button>
-              </td>
-              <td className="border px-4 py-2">
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                  onClick={() => navigateToBookDetails(book.id)}
-                >
-                  Details
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+        {data.books.length > 0 && (
+          <tbody data-cy="book-list">
+            {data?.books?.map((book: BookType) => (
+              <tr key={book.id}>
+                <td className="border px-4 py-2">{book.id}</td>
+                <td data-cy={`book-title-${book.id}`} className="border px-4 py-2">
+                  {book.title}
+                </td>
+                <td className="border px-4 py-2">{book.author}</td>
+                <td className="border px-4 py-2">
+                  <button
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => handleDelete(book.id)}
+                    data-cy={`delete-book-button-${book.id}`}
+                  >
+                    Delete
+                  </button>
+                </td>
+                <td className="border px-4 py-2">
+                  <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => navigateToBookDetails(book.id)}
+                  >
+                    Details
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        )}
       </table>
 
       <AddBookFormGraphql />
