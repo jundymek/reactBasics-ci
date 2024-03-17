@@ -47,3 +47,5 @@ jobs:
 
       - name: Run Stryker Mutation Tests
         run: npx stryker run
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
