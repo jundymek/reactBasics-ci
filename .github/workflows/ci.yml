@@ -44,3 +44,6 @@ jobs:
           directory: coverage/
           flags: cypress
           name: codecov-umbrella
+
+      - name: Run Stryker Mutation Tests
+        run: npx stryker run
